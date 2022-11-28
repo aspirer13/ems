@@ -14,20 +14,31 @@ import com.rest.ems.dto.Employee;
 public class EmployeeEntity {
 
 	@Id
-	@Column(name="Id")
+	@Column(name = "Id")
 	private int id;
 
-	@Column(name="Name")
+	@Column(name = "Name")
 	private String name;
 
-	@Column(name="Department")
+	@Column(name = "Department")
 	private String department;
 
-	@Column(name="Designation")
+	@Column(name = "Designation")
 	private String designation;
 
-	@Column(name="Joining_Date")
+	@Column(name = "Joining_Date")
 	private LocalDate joiningDate;
+
+	@Column(name = "Status")
+	private String employeeType;
+
+	public String getEmployeeType() {
+		return employeeType;
+	}
+
+	public void setEmployeeType(String employeeType) {
+		this.employeeType = employeeType;
+	}
 
 	public int getId() {
 		return id;
@@ -70,12 +81,13 @@ public class EmployeeEntity {
 	}
 
 	public Employee transformEntityToDto() {
-		Employee ee=new Employee();
+		Employee ee = new Employee();
 		ee.setDepartment(this.getDepartment());
 		ee.setDesignation(this.designation);
 		ee.setId(this.id);
 		ee.setJoiningDate(this.getJoiningDate());
 		ee.setName(this.name);
+		ee.setEmployeeType(this.getEmployeeType());
 		return ee;
 	}
 }

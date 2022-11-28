@@ -14,8 +14,19 @@ public class Employee {
 	private String department;
 
 	private String designation;
-	
+
 	private LocalDate joiningDate;
+
+	private String employeeType;
+
+	public String getEmployeeType() {
+		return employeeType;
+	}
+
+	@JsonSetter("type")
+	public void setEmployeeType(String employeeType) {
+		this.employeeType = employeeType;
+	}
 
 	public int getId() {
 		return id;
@@ -52,7 +63,7 @@ public class Employee {
 	public LocalDate getJoiningDate() {
 		return joiningDate;
 	}
-	
+
 	@JsonSetter("jDate")
 	public void setJoiningDate(LocalDate joiningDate) {
 		this.joiningDate = joiningDate;
@@ -65,6 +76,7 @@ public class Employee {
 		ee.setId(this.getId());
 		ee.setJoiningDate(this.getJoiningDate());
 		ee.setName(this.getName());
+		ee.setEmployeeType(this.getEmployeeType());
 		return ee;
 	}
 

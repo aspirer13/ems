@@ -2,29 +2,29 @@ package com.rest.ems.dto;
 
 public class Response {
 
-	private String errorMsg;
-	private int errorCode;
+	private String responseMsg;
+	private int responseCode;
 
-	public String getErrorMsg() {
-		return errorMsg;
+	public String getResponseMsg() {
+		return responseMsg;
 	}
 
-	public void setErrorMsg(String errorMsg) {
-		this.errorMsg = errorMsg;
+	public void setResponseMsg(String responseMsg) {
+		this.responseMsg = responseMsg;
 	}
 
-	public int getErrorCode() {
-		return errorCode;
+	public int getResponseCode() {
+		return responseCode;
 	}
 
-	public void setErrorCode(int errorCode) {
-		this.errorCode = errorCode;
+	public void setResponseCode(int responseCode) {
+		this.responseCode = responseCode;
 	}
 
-	public Response(String errorMsg, int errorCode) {
+	public Response(String responseMsg, int responseCode) {
 		super();
-		this.errorMsg = errorMsg;
-		this.errorCode = errorCode;
+		this.responseMsg = responseMsg;
+		this.responseCode = responseCode;
 	}
 
 }
